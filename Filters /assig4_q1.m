@@ -1,0 +1,11 @@
+b=imread('im11.jpg');
+%b=rgb2gray(a);
+f=[0 1 0; 1 -4 1; 0 1 0];
+c=imfilter(b,f);
+f2=[1 1 1; 1 -8 1; 1 1 1];
+d=imfilter(b,fspecial('laplacian'));
+e=imfilter(b,f2);
+subplot(2,2,1),imshow(b);
+subplot(2,2,2),imshow(c+b);
+subplot(2,2,4),imshow(d+b);
+subplot(2,2,3),imshow(e+b);

@@ -1,0 +1,10 @@
+b=imread('im9.jpg');
+%b=rgb2gray(a);
+f=[1 1; -1 -1 ]% Robert's Filter;
+c=imfilter(b,f);
+f2=[1 1 1 1 1; 1 1 1 1 1; 1 1 1 1 1]*(1/20);
+d=imfilter(b,f2);
+subplot(2,2,1),imshow(b);
+subplot(2,2,2),imshow(d);
+subplot(2,2,3),imshow(c);
+subplot(2,2,4),imshow(d+c);
